@@ -10,10 +10,9 @@ import java.time.LocalDateTime;
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String name;
-
 
     @Column(updatable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
@@ -22,17 +21,11 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(Integer id, String name, LocalDateTime creationDate) {
-        this.id = id;
-        this.name = name;
-        this.creationDate = creationDate;
-    }
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
